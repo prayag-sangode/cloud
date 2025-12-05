@@ -3,14 +3,14 @@ data "aws_ami" "amazon_linux_3" {
 
   filter {
     name   = "name"
-    values = ["amazon-linux-2023-*-hvm-*-x86_64-*"]
+    values = ["al2023-ami-*-x86_64"]
   }
 
   filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
+    name   = "architecture"
+    values = ["x86_64"]
   }
 
-  owners = ["137112412989"] # Amazon official account for Amazon Linux
+  owners = ["137112412989"] # Amazon official account
 }
 # ami = data.aws_ami.amazon_linux_3.id
